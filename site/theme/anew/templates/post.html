@@ -1,0 +1,50 @@
+{% if article.posttype %}
+    {% set posttype = article.posttype %}
+{% else %}
+    {% set posttype = 'post' %}
+{% endif %}
+
+<article class="post-2315 post type-post status-publish hentry category-post-formats group format-{{ posttype }}">
+    <h2 class="post-title pad">
+    {% if not full_view %}
+        <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a>
+    {% else %}
+        {{ article.title }}
+    {% endif %}
+    </h2>
+
+    <ul class="post-meta pad group">
+        <li><a href="{{ SITEURL }}/{{ article.category.url }}" title="View all posts in {{article.category}}" rel="category tag">{{article.category}}</a></li>
+        <li><i class="fa fa-clock-o"></i>{{ article.date.strftime('%Y-%m-%d') }}</li>
+        <li><a href="{{ SITEURL }}/{{ article.url }}#comments"><i class="fa fa-comment"></i></a></li>
+    </ul>
+
+    {% include "posttypes/%s.html"|format(posttype) ignore missing %}
+
+    <div class="post-inner">
+        <div class="post-deco">
+            <div class="hex hex-small">
+                <div class="hex-inner"><i class="fa"></i></div>
+                <a href="{{ SITEURL }}/{{ article.posttype.url }}"></a>
+                <div class="corner-1"></div>
+                <div class="corner-2"></div>
+            </div>
+        </div>
+
+        <div class="post-content pad">
+            {% if not full_view %}
+                <div class="entry">
+                    {{article.summary | safe()}}
+                </div>
+
+                <a class="more-link-custom" href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="{{ article.title|striptags }}">
+                    <span><i>More</i></span>
+                </a>
+            {% else %}
+                <div class="entry">
+                    {{article.content | safe()}}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</article>

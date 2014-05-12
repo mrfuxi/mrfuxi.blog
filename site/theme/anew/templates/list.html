@@ -1,0 +1,18 @@
+<div class="pad group">
+
+    {% if posttype is defined %}
+    <div class="page-title pad">
+        <h1>
+            <i class="fa fa-{{ posttype }}"></i>Type: <span>{{ posttype }}</span>
+        </h1>
+    </div>
+    {% endif %}
+
+    {% for article in articles_page.object_list %}
+        {% include "post.html" %}
+    {% endfor %}
+
+    {#
+    {% include 'pagination.html' %}
+    #}
+</div>

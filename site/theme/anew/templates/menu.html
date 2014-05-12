@@ -1,0 +1,30 @@
+<ul id="menu-topbar-menu" class="nav container-inner group">
+{% for title, link in MENUITEMS %}
+    <li class="menu-item">
+        <a href="{{ link }}">
+            {{ title }}
+        </a>
+    </li>
+{% endfor %}
+
+{% if DISPLAY_CATEGORIES_ON_MENU %}
+    {% for cat, null in categories %}
+        <li class="menu-item {%if cat == category %}current_page_item {% endif %}">
+            <a href="{{ SITEURL }}/{{ cat.url }}">
+                {{ cat }}
+            </a>
+        </li>
+    {% endfor %}
+{% endif %}
+
+{% if DISPLAY_PAGES_ON_MENU %}
+    {% for p in PAGES | sort(attribute="sort") %}
+        <li class="menu-item {%if p == page %}current_page_item {% endif %}">
+            <a href="{{ SITEURL }}/{{ p.url }}">
+                {{ p.title }}
+            </a>
+        </li>
+    {% endfor %}
+{% endif %}
+</ul>
+

@@ -1,0 +1,84 @@
+{% extends "layout.html" %}
+
+{% block body_attribs %}
+ class="col-{{PAGE_COLUMNS_LAYOUT}}cl full-width topbar-enabled"
+{% endblock %}
+
+{% block navbar %}
+<header id="header">
+    <nav class="nav-container group" id="nav-topbar">
+        <div class="nav-toggle"><i class="fa fa-bars"></i></div>
+        <div class="nav-text"><!-- put your mobile menu text here --></div>
+
+        <div class="nav-wrap container">
+            {% include "menu.html" %}
+        </div>
+
+        {% if SEARCH %}
+        <div class="container"> 
+            <div class="toggle-search"><i class="fa fa-search"></i></div>
+            <div class="search-expand">
+                <div class="search-expand-inner">
+                    <form method="get" class="searchform themeform" action="http://demo.alxmedia.se/anew/">
+                        <div>
+                            <input type="text" class="search" name="s" onblur="if(this.value=='')this.value='To search type and hit enter';" onfocus="if(this.value=='To search type and hit enter')this.value='';" value="To search type and hit enter">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    </nav>
+
+    <div class="container">
+        <div class="pad group">
+            <h1 class="site-title">
+                <a href="/" rel="home">
+                    <img src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/img/logo.png" alt="{{ SITENAME }}">
+                </a>
+            </h1>
+            <p class="site-description">{{ SITENAME }}</p>
+
+            <ul class="social-links">
+                {% for soc_title, soc_class, soc_url in SOCIAL %}
+                <li>
+                    <a rel="nofollow" class="social-tooltip" title="{{ soc_title }}" href="{{ soc_url }}">
+                        <i class="fa fa-{{ soc_class }}"></i>
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div><!--/.container-->
+</header>
+{% endblock %}
+
+{% block footer %}
+<footer id="footer">
+    <section id="footer-bottom">
+        <div class="container">
+            <a id="back-to-top" href="#">
+                <i class="fa fa-angle-up"></i>
+            </a>
+            <div class="pad group">
+                <div class="grid one-half">
+                    <img id="footer-logo" src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/img/footer_logo.png" alt="{{ SITENAME }}">
+                    <div id="copyright">
+                        <p>
+                            {{ SITENAME }} &copy; 2014. All Rights Reserved.
+                        </p>
+                    </div>
+
+                    <div id="credit">
+                        <p>
+                            Proudly powered by <a href="http://getpelican.com/" rel="nofollow">Pelican</a>, which takes great advantage of <a href="http://python.org" rel="nofollow">Python</a>.
+                            Theme by <a href="http://alxmedia.se" rel="nofollow">Alx</a>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</footer>
+{% endblock %}
+

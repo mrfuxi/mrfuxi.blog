@@ -1,0 +1,10 @@
+<div class="post-format">
+    <div class="image-container">
+        <img width="700" height="329" class="attachment-thumb-large wp-post-image"
+             src="{{article.image}}"
+             alt="{{article.imagetitle|default('Image')}}">
+        {% if article.imagetitle %}
+            <div class="image-caption">{{article.imagetitle}}</div>
+        {% endif %}
+    </div>
+</div>
