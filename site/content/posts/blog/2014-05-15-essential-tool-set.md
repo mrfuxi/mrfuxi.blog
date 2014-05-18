@@ -3,7 +3,7 @@ Title: Essential tool set
 Category: blog
 
 I believe that **every** developer should have this essential set of tools for day to day use.
-You might not realize you actually using it, most of the times it's just habit, or as you like "only reasonable way to stuff".
+You might not realize you actually using it, most of the times it's just habit, or as you like "only reasonable way to do stuff".
 Someone might argue that tools you're using are closely related to language you're using. That is right, at least in most of cases.
 However there are tools that are used by everyone/vast majority (some might not apply to front-enders)
 
