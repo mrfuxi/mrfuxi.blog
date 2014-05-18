@@ -22,4 +22,4 @@ PLUGINS = ["my_plugins.post_type", ]
 # Following items are often useful when publishing
 
 #DISQUS_SITENAME = ""
-#GOOGLE_ANALYTICS = ""
+GOOGLE_ANALYTICS = "UA-51123213-1"
