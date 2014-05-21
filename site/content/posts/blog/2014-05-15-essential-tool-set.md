@@ -1,6 +1,7 @@
 Date: 2014-05-15
 Title: Essential tool set
 Category: blog
+DISQUS_ID: 2014-05-15-essential-tool-set
 
 I believe that **every** developer should have this essential set of tools for day to day use.
 You might not realize you actually using it, most of the times it's just habit, or as you like "only reasonable way to do stuff".

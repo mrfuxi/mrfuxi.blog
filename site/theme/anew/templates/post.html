@@ -16,7 +16,9 @@
     <ul class="post-meta pad group">
         <li><a href="{{ SITEURL }}/{{ article.category.url }}" title="View all posts in {{article.category}}" rel="category tag">{{article.category}}</a></li>
         <li><i class="fa fa-clock-o"></i>{{ article.date.strftime('%Y-%m-%d') }}</li>
-        <li><a href="{{ SITEURL }}/{{ article.url }}#comments"><i class="fa fa-comment"></i></a></li>
+        {% if article.disqus_id %}
+        <li><a class="fa fa-comment" href="{{ SITEURL }}/{{ article.url }}#disqus_thread" data-disqus-identifier="{{ article.disqus_id }}"></a></li>
+        {% endif %}
     </ul>
 
     {% include "posttypes/%s.html"|format(posttype) ignore missing %}
@@ -44,6 +46,11 @@
                 <div class="entry">
                     {{article.content | safe()}}
                 </div>
+
+                {% if DISQUS_SITENAME and article.disqus_id %}
+                    {% set DISQUS_IDENTIFIER=article.disqus_id %}
+                    {% include 'disqus_thread.html' %}
+                {% endif %}
             {% endif %}
         </div>
     </div>

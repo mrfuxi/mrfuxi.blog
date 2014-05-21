@@ -1,6 +1,8 @@
 Date: 2014-05-05
 Title: Use Docker to develop Solr plugin
 Category: blog
+DISQUS_ID: 2014-05-05-docker-solr-plugin
+
 
 From time to time I have a need to customize Solr a bit more that is's possible using regular configuration.
 

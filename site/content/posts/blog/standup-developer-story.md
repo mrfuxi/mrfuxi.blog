@@ -1,6 +1,8 @@
 Date: 2014-05-12
 Title: Daily standup - developer or story oriented
 Category: blog
+DISQUS_ID: 2014-05-05-standup-developer-story
+
 
 We are doing this every day, it's part of the routine. After some time it becomes a second nature. Our daily stand-up...
 
