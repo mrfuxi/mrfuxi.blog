@@ -17,8 +17,6 @@ CATEGORY_FEED_ATOM = "feeds/%s.atom.xml"
 
 DELETE_OUTPUT_DIRECTORY = True
 
-PLUGINS = ["my_plugins.post_type", ]
-
 # Following items are often useful when publishing
 
 DISQUS_SITENAME = "mrfuxi"
