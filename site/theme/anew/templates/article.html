@@ -10,3 +10,13 @@
         {% include 'post.html' %}
     </div>
 {% endblock content %}
+
+{% block styles %}
+    {{ super() }}
+    <link href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/highlightjs/{{HIGHLIGHT_STYLE}}.min.css" rel="stylesheet">
+{% endblock styles %}
+
+{% block scripts %}
+    <script src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/js/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+{% endblock scripts %}

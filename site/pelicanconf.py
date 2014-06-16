@@ -54,7 +54,12 @@ THEME = os.path.join(base_dir, "theme", "anew")
 
 
 PLUGIN_PATH = 'plugins'
-PLUGINS = ["my_plugins.post_type", "sitemap"]
+PLUGINS = [
+    "my_plugins.post_type",
+    "sitemap",
+    "liquid_tags.youtube",
+    "liquid_tags.vimeo",
+]
 PAGE_COLUMNS_LAYOUT = 1
 
 # Uncomment following line if you want document-relative URLs when developing
@@ -73,3 +78,6 @@ SITEMAP = {
         'pages': 'daily',
     },
 }
+
+MD_EXTENSIONS = ['extra']
+HIGHLIGHT_STYLE = 'default'
